@@ -1,34 +1,33 @@
-// --- PART 1: Time-based Greeting ---
+// --- Week 10: Existing Greeting & Age Calculation ---
 let userName = "Pragya Thapa Magar";
 let currentHour = new Date().getHours();
 
 if (currentHour < 12) {
-    console.log(`Good morning, ${userName}!`);
+  console.log("Good morning, " + userName + "!");
 } else if (currentHour < 18) {
-    console.log(`Good afternoon, ${userName}!`);
+  console.log("Good afternoon, " + userName + "!");
 } else {
-    console.log(`Good evening, ${userName}!`);
+  console.log("Good evening, " + userName + "!");
 }
 
-
-// --- PART 2: Age and Days Lived Verification ---
-let age = 19; // Age: 19 yrs
+let birthYear = 2007; // 19 years old in 2026
+let age = 2026 - birthYear;
 let daysLived = age * 365;
-console.log(`You have lived for approximately ${daysLived} days!`);
+
+console.log("You have lived for approximately " + daysLived + " days!");
 
 if (age >= 18) {
-    console.log("You are an adult.");
+  console.log("You are an adult.");
 } else {
-    console.log("You are a minor.");
+  console.log("You are a minor.");
 }
 
+// --- Week 11: Dark Mode Toggle ---
+const themeBtn = document.querySelector("#theme-toggle") || document.querySelector(".theme-toggle");
 
-// --- PART 3: Week 11 DOM & Dynamic Event Handling ---
-// 1. Pinpoint the theme toggle button element using querySelector[span_2](start_span)[span_2](end_span)
-const themeButton = document.querySelector('#theme-toggle');
-
-// 2. Deploy an event listener ('security guard') to detect clicks[span_3](start_span)[span_3](end_span)
-themeButton.addEventListener('click', () => {
-    // 3. Toggle the 'dark-mode' class on the body element[span_4](start_span)[span_4](end_span)
-    document.body.classList.toggle('dark-mode');
-});
+if (themeBtn) {
+  themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+    console.log("Dark mode toggled!");
+  });
+}
